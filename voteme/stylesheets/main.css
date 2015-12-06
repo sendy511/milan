@@ -1,0 +1,53 @@
+/* line 3, ../sass/main.scss */
+body {
+  font-family: "Microsoft Yahei", "Arial", "Hiragino Sans GB";
+}
+
+/* line 6, ../sass/main.scss */
+.header {
+  background: url("/images/header.png");
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  padding-left: 0.5em;
+  margin-bottom: 0.5em;
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+/* line 16, ../sass/main.scss */
+.header .title {
+  font-size: 4em;
+  font-weight: bold;
+  color: #9B4FC6;
+  width: 100%;
+  text-align: center;
+}
+/* line 24, ../sass/main.scss */
+.header .sub-title {
+  font-size: 2.5em;
+  color: #9B4FC6;
+}
+
+/* line 31, ../sass/main.scss */
+.bless .bless_item {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #9B4FC6;
+  height: 2em;
+  line-height: 2em;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #BD4BE1;
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
+  border-radius: 0.4em;
+  padding-left: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* line 46, ../sass/main.scss */
+.bless-summary {
+  font-size: 2.5em;
+  color: #9B4FC6;
+}

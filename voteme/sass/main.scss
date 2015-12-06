@@ -1,0 +1,49 @@
+@import "compass/css3";
+
+body{
+	font-family: 'Microsoft Yahei','Arial','Hiragino Sans GB'
+}
+.header{
+	background: url('/images/header.png');
+	filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+   	-moz-background-size:100% 100%;
+   	background-size:100% 100%;
+	padding-left: 0.5em;
+	margin-bottom: 0.5em;
+
+	@include border-radius(0.4em);
+
+	.title{
+		font-size: 4em;
+		font-weight: bold;
+		color: #9B4FC6;
+		width: 100%;
+		text-align: center;
+	}
+
+	.sub-title{
+		font-size: 2.5em;
+		color: #9B4FC6;
+	}
+}
+
+.bless{
+	.bless_item{
+		font-size: 2.5em;
+		font-weight: bold;
+		color: #9B4FC6;
+		height: 2em;
+		line-height: 2em;
+		border-style: solid;
+		border-width: 2px;
+		border-color: #BD4BE1;
+		@include border-radius(0.4em);
+		padding-left: 0.5em;
+		margin-bottom: 0.5em;
+	}
+}
+
+.bless-summary{
+	font-size: 2.5em;
+	color: #9B4FC6;
+}
