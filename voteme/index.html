@@ -9,12 +9,18 @@
 		<div class="sub-title">每一张照片后面都蕴藏着一段美好的故事，分享让美好在你我心中传递。留住美丽，爱永恒。让我们大家一起来为她们送祝福啦！</div>
 	</div>
 	<div class="bless">
-		<div class="bless_item" onclick="alert('谢谢您的祝福，祝您开心快乐！')">祝福A：美美哒~~ 祝福开心，快乐每一天</div>
-		<div class="bless_item">祝福B：天哪，太美了，我震惊啦！</div>
-		<div class="bless_item">祝福C：太漂亮了，我们也要。</div>
+		<div class="bless_item" onclick="clickBless();">祝福A：美美哒~~ 祝福开心，快乐每一天</div>
+		<div class="bless_item" onclick="clickBless();">祝福B：天哪，太美了，我震惊啦！</div>
+		<div class="bless_item" onclick="clickBless();">祝福C：太漂亮了，我们也要。</div>
 	</div>
 	<div class="bless-summary">
-		因为有你们的爱，我们已经收到100个祝福了。
+		因为有你们的爱，我们已经收到<span id="bless-summary-number">99</span>个祝福了。
 	</div>
+	
+	<script type="text/javascript" src="javascripts/jquery.js"></script>
+	<script type="text/javascript" src="javascripts/main.js"></script>
+	<script type="text/javascript">
+		loadCount();
+	</script>
 </body>
 </html>
