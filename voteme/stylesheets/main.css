@@ -5,7 +5,7 @@ body {
 
 /* line 6, ../sass/main.scss */
 .header {
-  background: url("/images/header.png");
+  background: url("../images/header.png");
   filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
   -moz-background-size: 100% 100%;
   background-size: 100% 100%;
