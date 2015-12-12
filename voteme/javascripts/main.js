@@ -26,7 +26,7 @@ function clickBless(){
 		alert('您已经送过祝福了！');
 	}
 	else{
-		//
+		//http://52.34.73.217:3999/increasecount?userId=1
 		alert('谢谢您的祝福，祝您开心快乐！');
 		var currentCount = parseInt($("#bless-summary-number").text());
 		$("#bless-summary-number").text(currentCount + 1);
