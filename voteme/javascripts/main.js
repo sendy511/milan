@@ -12,6 +12,7 @@ var userId = $.urlParam("userId");
 var voted = false;
 
 function loadCount(){
+	//http://52.34.73.217:3999/getcount?userId=1
 	$.getJSON("http://chaxun.1616.net/s.php?type=ip&amp;output=json&amp;callback=?&amp;_=1", 
 		function(data){
 			var count = parseInt(data);
