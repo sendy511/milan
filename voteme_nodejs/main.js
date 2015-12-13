@@ -3,8 +3,8 @@ var fs = require('fs');
 
 var serv = http.createServer(function(req, res)
 {
-	log(getIp(req));
-	log(req.rawHeaders);
+	log("Incoming IP: " + getIp(req));
+	log("Request Headers: " + req.rawHeaders);
 	if(req.url.indexOf("getcount"))
 	{
 		if(req.url.indexOf("userId=") !== -1){
@@ -15,19 +15,17 @@ var serv = http.createServer(function(req, res)
 	if(req.url.indexOf("increasecount")){
 		if(req.url.indexOf("userId=") !== -1){
 			var userId = req.url.substring(req.url.indexOf("userId=") + "userId=".length);
-			increaseCountToFile(userId);
+			increaseCountToFile(userId, res);
 		}
 	}
 })
 
 var increaseCountToFile = function(userId, res){
-   	res.writeHead(200);
-
-	var lines = fs.readFileSync('counter.txt', 'utf-8').toString().split("\r\n");
+   	var lines = fs.readFileSync('counter.txt', 'utf-8').toString().split("\r\n");
 	var matched = false;
 	for(i in lines) {
 	    if(lines[i].split("\t")[0] == userId.toString()){
-			lines[i] = userId.toString() + "\t" + (1 + lines[i].split("\t")[1]);
+			lines[i] = userId.toString() + "\t" + (1 + parseInt(lines[i].split("\t")[1]));
 			matched = true;
 			break;
 	    }
@@ -35,8 +33,8 @@ var increaseCountToFile = function(userId, res){
 	if(!matched){
 		lines.push(userId.toString() + "\t" + 1);
 	}
-
-	//TODO: Save back to FIle....
+	fs.writeFileSync('counter.txt', lines.toString().replace(/\,/g, "\r\n"), 'utf-8');
+	res.writeHead(200);
 }
 
 var responseFromFile = function(userId, res){
@@ -66,4 +64,4 @@ var log = function(message){
 	console.log(now + " : " + message);
 }
 
-serv.listen(3000);
+serv.listen(3999);
