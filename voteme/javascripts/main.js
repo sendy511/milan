@@ -10,10 +10,10 @@ $.urlParam = function(name){
 
 var userId = $.urlParam("userId");
 var voted = false;
-
+// var counter_host_ip = "52.34.73.217";
+var counter_host_ip = "localhost";
 function loadCount(){
-	//http://52.34.73.217:3999/getcount?userId=1
-	$.getJSON("http://chaxun.1616.net/s.php?type=ip&amp;output=json&amp;callback=?&amp;_=1", 
+	$.getJSON("http://" + counter_host_ip + ":3999/getcount?userId=" + userId, 
 		function(data){
 			var count = parseInt(data);
 			$("#bless-summary-number").text(count);
@@ -26,7 +26,9 @@ function clickBless(){
 		alert('您已经送过祝福了！');
 	}
 	else{
-		//http://52.34.73.217:3999/increasecount?userId=1
+		$.getJSON("http://" + counter_host_ip + ":3999/increasecount?userId=" + userId, 
+			function(data){}
+		);
 		alert('谢谢您的祝福，祝您开心快乐！');
 		var currentCount = parseInt($("#bless-summary-number").text());
 		$("#bless-summary-number").text(currentCount + 1);
