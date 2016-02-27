@@ -11,3 +11,5 @@
 - voteme_nodejs: AWS
 
 ### Development Step:
+- PS D:\projects\milan\voteme> guard start
+- python	-m	SimpleHTTPServer	9999
